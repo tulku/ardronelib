@@ -93,12 +93,12 @@ bool_t ardrone_tool_configuration_addevent_##NAME(C_TYPE_PTR value, ardrone_tool
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].control_mode = ACK_CONTROL_MODE;							\
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].result_callback = result_callback;							\
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].key = #NAME;												\
-      printf("Hola!!!! Linea 1\n"); \
-      printf("strlen(value): %d\n", strlen((char*)value)); \
-      printf("strlen((char*) value)+1: %d\n", strlen((char*)value)+1); \
-      printf("sizeof(C_TYPE): %d\n", sizeof(C_TYPE)); \
+      PRINT("Hola!!!! Linea 1\n"); \
+      PRINT("strlen(value): %d\n", strlen((char*)value)); \
+      PRINT("strlen((char*) value)+1: %d\n", strlen((char*)value)+1); \
+      PRINT("sizeof(C_TYPE): %d\n", sizeof(C_TYPE)); \
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].value = vp_os_malloc((strlen((char*)value) + 1) * sizeof(C_TYPE));				\
-      printf("sizeof(*value en struct): %d\n", sizeof(*ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].value)); \
+      PRINT("sizeof(*value en struct): %d\n", sizeof(*ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].value)); \
 			vp_os_memcpy(ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].value, value, (strlen((char*)value) + 1) * sizeof(C_TYPE));		\
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].callback	= (ardrone_at_configuration_set)&ARDRONE_CONFIGURATION_SET_FUNCTION(NAME);	\
 			ardrone_tool_configuration_nb_event = (ardrone_tool_configuration_nb_event + 1) % ARDRONE_TOOL_CONFIGURATION_MAX_EVENT;			\
