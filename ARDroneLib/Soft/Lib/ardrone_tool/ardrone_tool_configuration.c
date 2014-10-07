@@ -93,7 +93,8 @@ bool_t ardrone_tool_configuration_addevent_##NAME(C_TYPE_PTR value, ardrone_tool
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].control_mode = ACK_CONTROL_MODE;							\
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].result_callback = result_callback;							\
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].key = #NAME;												\
-      printf("strlen(value): %d\n", strlen(value)); \
+      printf("Hola!!!! Linea 1\n"); \
+      printf("strlen(value): %d\n", strlen((char*)value)); \
       printf("strlen((char*) value)+1: %d\n", strlen((char*)value)+1); \
       printf("sizeof(C_TYPE): %d\n", sizeof(C_TYPE)); \
 			ardrone_tool_configuration_data[ardrone_tool_configuration_nb_event].value = vp_os_malloc((strlen((char*)value) + 1) * sizeof(C_TYPE));				\
